@@ -16,7 +16,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer {
 
 	public void onTestFailure(ITestResult result) {
 		String filename = System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + result.getMethod().getMethodName();
-		File file = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
+		File file = ((TakesScreenshot) BaseTest.getDriver()).getScreenshotAs(OutputType.FILE);
 		
 		try {
 			FileUtils.copyFile(file, new File(filename + ".png"));

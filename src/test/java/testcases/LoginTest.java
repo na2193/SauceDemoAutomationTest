@@ -8,11 +8,12 @@ import base.BaseTest;
 import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
-	LoginPage loginPage = new LoginPage();
+	
 	
 	@Test
 	public void validateErrorMessageForNoInput() {
 		logger.log(Status.INFO, "Testing login test");
+		LoginPage loginPage = new LoginPage(getDriver());
 		loginPage.login();
 	}
 }

@@ -1,6 +1,7 @@
 package base;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,19 +26,29 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.CSVReader;
 import utils.Constants;
 
 /*
  * This class initializes the browsers, extent report and handles test setup
  */
 public class BaseTest {
-	public static WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public ExtentSparkReporter sparkReporter;
 	public ExtentReports extent;
 	public ExtentTest logger;
+	protected CSVReader data;
 	
-	@BeforeTest
-	public void setupExtentReport() {
+	protected void setDriver(WebDriver driverInstance) {
+		driver.set(driverInstance);
+	}
+	
+	public static WebDriver getDriver() {
+	    return driver.get();
+	}
+	
+	//@BeforeTest
+	private void setupExtentReport() {
 		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "reports" + File.separator + "ExtentReport_" + getSystemDate() + ".html");
 		extent = new ExtentReports();
 		extent.attachReporter(sparkReporter);
@@ -48,13 +59,31 @@ public class BaseTest {
 		sparkReporter.config().setReportName("Automation Test Resutls");
 	}
 	
+	private void setupReadingCSV() throws IOException{
+		String path = "src/test/resources/testdata.txt"; // needs update 
+		data = new CSVReader(path);
+	}
+	
+	
+	@BeforeTest
+	public void beforeTestSetup() {
+		setupExtentReport();
+		try {
+			setupReadingCSV();
+		} catch (IOException e) {
+	        e.printStackTrace();
+	        throw new RuntimeException("Failed to load test data CSV", e);
+	    }
+	}
+	
 	@BeforeMethod
 	@Parameters("browser")
 	public void setUp(String browser, Method testMethod) {
 		logger = extent.createTest(testMethod.getName());
+		
 		setupDriver(browser);
-		driver.manage().window().maximize();
-		driver.get(Constants.url);
+		getDriver().manage().window().maximize();
+		getDriver().get(Constants.url);
 	}
 	
 	@AfterMethod
@@ -70,7 +99,7 @@ public class BaseTest {
 			logger.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " - Test Case Passed", ExtentColor.GREEN));
 		}
 		
-		driver.quit();
+		getDriver().quit();
 	}
 	
 	@AfterTest
@@ -81,15 +110,15 @@ public class BaseTest {
 	private void setupDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver.set(new ChromeDriver());
 		}
 		else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver.set(new FirefoxDriver());
 		}
 		else if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			driver.set(new EdgeDriver());
 		}
 	}
 	
