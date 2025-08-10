@@ -1,7 +1,10 @@
 package base;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -60,8 +63,13 @@ public class BaseTest {
 	}
 	
 	private void setupReadingCSV() throws IOException{
-		String path = "src/test/resources/testdata.txt"; // needs update 
-		data = new CSVReader(path);
+		//String path = "/saucedemo/src/test/java/resources/testdata.csv"; // needs update 
+		InputStream is = getClass().getClassLoader().getResourceAsStream("testdata.csv");
+		if (is == null) {
+		    throw new FileNotFoundException("Could not find 'testdata.csv' in test resources.");
+		}
+        InputStreamReader isr = new InputStreamReader(is);
+		data = new CSVReader(isr);
 	}
 	
 	

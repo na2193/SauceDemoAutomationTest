@@ -11,8 +11,8 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="closeReport"/>
           <include name="beforeTestSetup"/>
+          <include name="closeReport"/>
           <include name="validateErrorMessageForNoInput"/>
         </methods>
       </class> <!-- testcases.LoginTest -->

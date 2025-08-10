@@ -1,8 +1,8 @@
 package utils;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,8 +10,9 @@ public class CSVReader {
 
     private Map<String, String> dataMap = new HashMap<>();
 
-    public CSVReader(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+    public CSVReader(InputStreamReader isr) throws IOException {
+        //BufferedReader reader = new BufferedReader(new FileReader(isr));
+    	BufferedReader reader = new BufferedReader(isr);
         String line;
 
         while ((line = reader.readLine()) != null) {
