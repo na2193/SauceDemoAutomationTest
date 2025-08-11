@@ -1,10 +1,7 @@
 package pageObjects;
 
-public interface LoginPageElements {
-	String input_username = "user-name";
-	String input_password = "password";
-	String input_login = "//*[@id='login-button']";
-	String nocredentials_errormessage = "//*[@id='login_button_container']/div/form/div[3]/h3";
+public interface ProductPageElements {
+
 	String add_backpack_button = "add-to-cart-sauce-labs-backpack";
 	String add_bikelight_button = "add-to-cart-sauce-labs-bike-light";
 	String add_bolt_tshirt_button = "add-to-cart-sauce-labs-bolt-t-shirt";
