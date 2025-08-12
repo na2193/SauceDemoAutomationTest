@@ -24,27 +24,27 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath=LoginPageElements.nocredentials_errormessage)
 	WebElement noCredentialsErrMsg;
 	
-//	@FindBy(xpath=LoginPageElements.saucelabs_backpack)
-//	WebElement validLogin;
+	@FindBy(xpath=LoginPageElements.products_page)
+	WebElement validLogin_productsPage;
 	
 	public LoginPage(WebDriver driver, CSVReader data, ExtentTest logger) {
 		super(driver, data, logger);
 	}
 
 	public void validateNoCredentialsError() {
+		waitForElementVisible(userName);
 		login.click();
 		String errmsg_actualText = noCredentialsErrMsg.getText();
-		String errmsg_expectedText = "Epic sadface: Username is required";
-		logger.log(Status.INFO, "Validating error message when no credentials are entered");
+		String errmsg_expectedText = data.get("username_required_err_msg");
 		compareText(errmsg_actualText, errmsg_expectedText);
 	}
 
 	public void validatePswdErrMsg() {
-		userName.sendKeys("abc");
+		userName.sendKeys(data.get("invalid_username"));
 		login.click();
 		
 		String errmsg_actualText = noCredentialsErrMsg.getText();
-		String errmsg_expectedText = "Epic sadface: Password is required";
+		String errmsg_expectedText = data.get("password_required_err_msg");
 		compareText(errmsg_actualText, errmsg_expectedText);
 		
 		userName.clear();
@@ -53,12 +53,12 @@ public class LoginPage extends BasePage{
 
 	
 	public void validateUserAndPswdErrMsg() {
-		userName.sendKeys("abc");
-		password.sendKeys("nn");
+		userName.sendKeys(data.get("invalid_username"));
+		password.sendKeys(data.get("invalid_password"));
 		login.click();
 		
 		String errmsg_actualText = noCredentialsErrMsg.getText();
-		String errmsg_expectedText = "Epic sadface: Username and password do not match any user in this service";
+		String errmsg_expectedText = data.get("invalid_username_pass_err_msg");
 		compareText(errmsg_actualText, errmsg_expectedText);
 		
 		userName.clear();
@@ -66,13 +66,23 @@ public class LoginPage extends BasePage{
 		
 	}
 	
-	public void validateSuccessLogin() throws InterruptedException {
-		Thread.sleep(5000);
-		userName.sendKeys("standard_user");
-		password.sendKeys("secret_sauce");
+	public void validateSuccessLogin_StandardUser() {
+		refreshPage();
+		waitForElementVisible(userName);
+		userName.sendKeys(data.get("standard_user_name"));
+		password.sendKeys(data.get("login_password"));
 		login.click();
-		Thread.sleep(3000);
-		//verifyElementPrsnt(validLogin);
+		wait(2);
+		
+		if(isElementPresent(validLogin_productsPage)) {
+			logger.log(Status.PASS, "Successfully logged in!");
+		}
+		else {
+			logger.log(Status.FAIL, "Failed to log in!");
+		}
 	}
+	
+	// Add couple more function to login with different usernames and password
+	// Will need to have a function to log out
 
 }

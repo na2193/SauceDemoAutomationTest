@@ -5,11 +5,5 @@ public interface LoginPageElements {
 	String input_password = "password";
 	String input_login = "//*[@id='login-button']";
 	String nocredentials_errormessage = "//*[@id='login_button_container']/div/form/div[3]/h3";
-	String add_backpack_button = "add-to-cart-sauce-labs-backpack";
-	String add_bikelight_button = "add-to-cart-sauce-labs-bike-light";
-	String add_bolt_tshirt_button = "add-to-cart-sauce-labs-bolt-t-shirt";
-	String add_fleece_jacket_button = "add-to-cart-sauce-labs-fleece-jacket";
-	String add_onesie_button = "add-to-cart-sauce-labs-onesie";
-	String add_testallthings_shirt = "add-to-cart-test.allthethings()-t-shirt-(red)";
-	String cart_icon = "//*[@id=\"shopping_cart_container\"]/a";
+	String products_page = "//span[text()='Products']";
 }

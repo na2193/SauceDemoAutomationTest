@@ -7,15 +7,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testcases.ProductsTest">
+      <class name="testcases.LoginTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="test"/>
+          <include name="loginTest"/>
           <include name="beforeTestSetup"/>
           <include name="closeReport"/>
         </methods>
-      </class> <!-- testcases.ProductsTest -->
+      </class> <!-- testcases.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
