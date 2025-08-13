@@ -1,0 +1,31 @@
+BaseTest.java
+This class setups the browser, reports and the test suite
+Don't need to modify anything here, one time setup
+
+BasePage.java
+This class has common function that you can add that can be used
+in any of the pages classes. We use common function so that we 
+don't need to re-create code.
+
+pageObjects package
+Here are all the classes to store xpaths for each page
+
+pages package
+Here are all the pages on the web application where the xpaths are
+stored and what actions to perform
+
+src/test/java/testcases
+Here are all the actual tests that are run, it calls the pages class
+and runs the scripts
+
+testng.xml
+This is how you run your tests
+
+src/test/resources/testdata.csv
+This is where the test data being used in the application is stored
+
+When testing/adding new pages:
+1. Create new pageObjects java class for all xpaths
+2. Create new pages java class 
+3. Under src/test/java/tescases, create new testng class
+4. Update testng.xml to run specifc tests

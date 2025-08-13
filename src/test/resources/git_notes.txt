@@ -1,0 +1,19 @@
+To Pull Latest Changes From Github
+1. Open git bash terminal
+2. Change directory to where eclipse-workspace is
+	a. ex: cd C://Users/nasim/eclipse-workspace
+3. Change directory to the sauce demo folder
+	a. ex: cd saucedemo
+4. Pull latest changes from github
+	a. git pull
+	
+To Push Changes To Github
+1. After opening git bash terminal and changing directory
+2. Get a list of files that you're going to make changes to
+	a. git status
+3. Add the list of files that you want to upload to github
+	a. git add .
+4. Commit these changes locally on your computer
+	a. git commit -m 'Write a message here on what has been updated'
+5. Upload the changes to github
+	a. git push
