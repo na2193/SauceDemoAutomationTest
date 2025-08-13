@@ -82,7 +82,105 @@ public class LoginPage extends BasePage{
 		}
 	}
 	
+	
 	// Add couple more function to login with different usernames and password
 	// Will need to have a function to log out
+	
+		public void validateSuccessLogin_ProblemUser() {
+		refreshPage();
+		waitForElementVisible(userName);
+		userName.sendKeys(data.get("problem_user_name"));
+		password.sendKeys(data.get("login_password"));
+		login.click();
+		wait(2);
+		
+		if(isElementPresent(validLogin_productsPage)) {
+			logger.log(Status.PASS, "Successfully logged in!");
+		}
+		else {
+			logger.log(Status.FAIL, "Failed to log in!");
+		}
+	}
+	
+	
+		public void validateSuccessLogin_lockedOutUser() {
+			refreshPage();
+			waitForElementVisible(userName);
+			userName.sendKeys(data.get("locked_out_user_name"));
+			password.sendKeys(data.get("login_password"));
+			login.click();
+			wait(2);	
+			
+			if(isElementPresent(validLogin_productsPage)) {
+				logger.log(Status.PASS, "Successfully logged in!");
+			}
+			else {
+				logger.log(Status.FAIL, "Failed to log in!");
+			}
+			
+		}
+		
+		
+		
+		public void validateSuccessLogin_performance_glitch_user() {
+			refreshPage();
+			waitForElementVisible(userName);
+			userName.sendKeys(data.get("performance_glitch_username"));
+			password.sendKeys(data.get("login_password"));
+			login.click();
+			wait(2);	
+			
+			if(isElementPresent(validLogin_productsPage)) {
+				logger.log(Status.PASS, "Successfully logged in!");
+			}
+			else {
+				logger.log(Status.FAIL, "Failed to log in!");
+			}
+			
+		}
+		
+		
+		
+		
+		public void validateSuccessLogin_error_user() {
+			refreshPage();
+			waitForElementVisible(userName);
+			userName.sendKeys(data.get("error_username"));
+			password.sendKeys(data.get("login_password"));
+			login.click();
+			wait(2);	
+			
+			if(isElementPresent(validLogin_productsPage)) {
+				logger.log(Status.PASS, "Successfully logged in!");
+			}
+			else {
+				logger.log(Status.FAIL, "Failed to log in!");
+			}
+			
+		}
+		
+		
+		public void validateSuccessLogin_visual_user() {
+			refreshPage();
+			waitForElementVisible(userName);
+			userName.sendKeys(data.get("visual_username"));
+			password.sendKeys(data.get("login_password"));
+			login.click();
+			wait(2);	
+			
+			if(isElementPresent(validLogin_productsPage)) {
+				logger.log(Status.PASS, "Successfully logged in!");
+			}
+			else {
+				logger.log(Status.FAIL, "Failed to log in!");
+			}
+			
+		}
+		
+		
+		
+		
+		
+	
 
 }

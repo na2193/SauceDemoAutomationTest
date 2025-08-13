@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-12T13:30:15 EDT" name="Suite" finished-at="2025-08-12T13:30:30 EDT" duration-ms="15523">
+  <suite started-at="2025-08-13T18:34:12 EDT" name="Suite" finished-at="2025-08-13T18:34:24 EDT" duration-ms="11214">
     <groups>
     </groups>
-    <test started-at="2025-08-12T13:30:15 EDT" name="Test" finished-at="2025-08-12T13:30:30 EDT" duration-ms="15523">
-      <class name="testcases.LoginTest">
-        <test-method is-config="true" signature="beforeTestSetup()[pri:0, instance:testcases.LoginTest@6025e1b6]" started-at="2025-08-12T13:30:15 EDT" name="beforeTestSetup" finished-at="2025-08-12T13:30:15 EDT" duration-ms="296" status="PASS">
+    <test started-at="2025-08-13T18:34:12 EDT" name="Test" finished-at="2025-08-13T18:34:24 EDT" duration-ms="11214">
+      <class name="testcases.ProductsTest">
+        <test-method is-config="true" signature="beforeTestSetup()[pri:0, instance:testcases.ProductsTest@ba2f4ec]" started-at="2025-08-13T18:34:12 EDT" name="beforeTestSetup" finished-at="2025-08-13T18:34:13 EDT" duration-ms="229" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTestSetup -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:testcases.LoginTest@6025e1b6]" started-at="2025-08-12T13:30:15 EDT" name="setUp" finished-at="2025-08-12T13:30:24 EDT" duration-ms="9252" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:testcases.ProductsTest@ba2f4ec]" started-at="2025-08-13T18:34:13 EDT" name="setUp" finished-at="2025-08-13T18:34:16 EDT" duration-ms="3814" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,33 +20,33 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[public void testcases.LoginTest.loginTest() throws java.lang.InterruptedException]]>
+                <![CDATA[public void testcases.ProductsTest.test() throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTest()[pri:0, instance:testcases.LoginTest@6025e1b6]" started-at="2025-08-12T13:30:24 EDT" name="loginTest" finished-at="2025-08-12T13:30:30 EDT" duration-ms="5358" status="PASS">
+        <test-method signature="test()[pri:0, instance:testcases.ProductsTest@ba2f4ec]" started-at="2025-08-13T18:34:16 EDT" name="test" finished-at="2025-08-13T18:34:23 EDT" duration-ms="6555" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testcases.LoginTest@6025e1b6]" started-at="2025-08-12T13:30:30 EDT" name="tearDown" finished-at="2025-08-12T13:30:30 EDT" duration-ms="135" status="PASS">
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testcases.ProductsTest@ba2f4ec]" started-at="2025-08-13T18:34:23 EDT" name="tearDown" finished-at="2025-08-13T18:34:23 EDT" duration-ms="241" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest()[pri:0, instance:testcases.LoginTest@6025e1b6] output={null}]]]>
+                <![CDATA[[TestResult name=test status=SUCCESS method=ProductsTest.test()[pri:0, instance:testcases.ProductsTest@ba2f4ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="closeReport()[pri:0, instance:testcases.LoginTest@6025e1b6]" started-at="2025-08-12T13:30:30 EDT" name="closeReport" finished-at="2025-08-12T13:30:30 EDT" duration-ms="433" status="PASS">
+        <test-method is-config="true" signature="closeReport()[pri:0, instance:testcases.ProductsTest@ba2f4ec]" started-at="2025-08-13T18:34:23 EDT" name="closeReport" finished-at="2025-08-13T18:34:24 EDT" duration-ms="346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-      </class> <!-- testcases.LoginTest -->
+      </class> <!-- testcases.ProductsTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Test Resutls</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 12, 2025 01:16:27 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 13, 2025 05:47:01 PM</span></a>
 </li>
 </ul>
 </div>
@@ -81,7 +81,7 @@
           <div class="test-detail">
             <p class="name">loginTest</p>
             <p class="text-sm">
-              <span>1:16:28 PM</span> / <span>00:00:28:286</span>
+              <span>5:47:02 PM</span> / <span>00:00:21:240</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -90,9 +90,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">loginTest</h5>
-<span class='badge badge-success'>08.12.2025 1:16:28 PM</span>
-<span class='badge badge-danger'>08.12.2025 1:16:56 PM</span>
-<span class='badge badge-default'>00:00:28:286</span>
+<span class='badge badge-success'>08.13.2025 5:47:02 PM</span>
+<span class='badge badge-danger'>08.13.2025 5:47:23 PM</span>
+<span class='badge badge-default'>00:00:21:240</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -105,65 +105,105 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:16:37 PM</td>
+        <td>5:47:03 PM</td>
         <td>
           Validating error message when no credentials are entered
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:16:38 PM</td>
+        <td>5:47:05 PM</td>
         <td>
           Expected Text -> Epic sadface: Username is required matches Actual Text - > Epic sadface: Username is required
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:16:38 PM</td>
+        <td>5:47:05 PM</td>
         <td>
           Validating error message when no password is entered
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:16:39 PM</td>
+        <td>5:47:05 PM</td>
         <td>
           Expected Text -> Epic sadface: Password is required matches Actual Text - > Epic sadface: Password is required
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:16:39 PM</td>
+        <td>5:47:05 PM</td>
         <td>
           Validating error message when invalid username and password are entered
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:16:40 PM</td>
+        <td>5:47:06 PM</td>
         <td>
           Expected Text -> Epic sadface: Username and password do not match any user in this service matches Actual Text - > Epic sadface: Username and password do not match any user in this service
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:16:40 PM</td>
+        <td>5:47:06 PM</td>
         <td>
           Validating success login with standard user
         </td>
       </tr>
       <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:47:06 PM</td>
+        <td>
+          Successfully logged in!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:06 PM</td>
+        <td>
+          Logging out of account
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:06 PM</td>
+        <td>
+          Logging out of account
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:07 PM</td>
+        <td>
+          Validating success login with problem user
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:07 PM</td>
+        <td>
+          Logging out of account
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>1:16:56 PM</td>
+        <td>5:47:23 PM</td>
         <td>
           <span class='badge white-text red'>loginTest - Test Case Failed</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>1:16:56 PM</td>
+        <td>5:47:23 PM</td>
         <td>
-          <span class='badge white-text red'>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getClass()" because "exceptionDriver" is null - Test Case Failed</span>
+          <span class='badge white-text red'>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (4934d3f36d44e84a997b83c397db9998)] -> id: logout_sidebar_link] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.184, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\nasim\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50730}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50730/devtoo..., se:cdpVersion: 138.0.7204.184, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4934d3f36d44e84a997b83c397db9998 - Test Case Failed</span>
         </td>
       </tr>
   </tbody>
@@ -185,13 +225,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 12, 2025 01:16:27 PM</h3>
+<h3>Aug 13, 2025 05:47:01 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 12, 2025 01:16:56 PM</h3>
+<h3>Aug 13, 2025 05:47:23 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -242,10 +282,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='33%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='28%'><b>4</b> events passed</small></div>
 <div>
-<small data-tooltip='22%'><b>2</b> events failed,
-<b data-tooltip='%'>4</b> others
+<small data-tooltip='14%'><b>2</b> events failed,
+<b data-tooltip='%'>8</b> others
 </small>
 </div>
 </div>
@@ -261,7 +301,7 @@
 </div></div>
 <script>
 var timeline = {
-"loginTest":28.286
+"loginTest":21.24
 };
 </script>
 <div class="row">
@@ -305,11 +345,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
+passEvents: 4,
 failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 4
+infoEvents: 8
 };
 </script>        </div>
       </div>

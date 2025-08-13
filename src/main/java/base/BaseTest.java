@@ -8,9 +8,12 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
@@ -117,6 +120,13 @@ public class BaseTest {
 	
 	private void setupDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
+			Map<String, Object> prefs = new HashMap<>();
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("--disable-password-manager-reauthentication");
+			options.addArguments("--disable-features=PasswordLeakDetections,PasswordGeneration,PasswordManagerOnboarding");
 			WebDriverManager.chromedriver().setup();
 			driver.set(new ChromeDriver());
 		}

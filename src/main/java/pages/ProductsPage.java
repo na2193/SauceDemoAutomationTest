@@ -32,6 +32,10 @@ public class ProductsPage extends BasePage {
 	
 	@FindBy(xpath=ProductPageElements.cart_icon)
 	WebElement cartIconButton;
+	
+	@FindBy(xpath=ProductPageElements.sauce_labs_backback_title)
+	WebElement sauceLabsBackpackTitle;
+	
 
 	public ProductsPage(WebDriver driver, CSVReader data, ExtentTest logger) {
 		super(driver, data, logger);
@@ -40,7 +44,21 @@ public class ProductsPage extends BasePage {
 	public void addProductsToCart() {
 		logger.log(Status.INFO, "Adding all items to cart and validating");
 		backPackButton.click();
+		bikeLightButton.click();
+		boltShirtButton.click();
+		fleeceJacketButton.click();
+		onesieButton.click();
+		testAllThingsButton.click();
+		cartIconButton.click();
 	}
 
-
+	public void validateSauceLabsBackpackTitle() {
+		String title_actualText = sauceLabsBackpackTitle.getText();
+		String title_expectedText = data.get("sauce_labs_title");
+		compareText(title_actualText, title_expectedText);
+		
+	}
+	
+	
+	
 }
