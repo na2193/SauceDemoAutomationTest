@@ -12,5 +12,9 @@ public interface ProductPageElements {
 	String logout_button = "logout_sidebar_link";
 	String menu_button = "//button[text()='Open Menu']";
 	String sauce_labs_backback_title = "//div[text()='Sauce Labs Backpack']";
-	
+	String bolt_t_shirt_title = "//div[text()='Sauce Labs Bolt T-Shirt']";
+	String fleece_jacket_title = "//div[text()='Sauce Labs Fleece Jacket']";
+	String test_all_things_title = "//div[text()='Test.allTheThings() T-Shirt (Red)']";
+	String bike_light_title = "//div[text()='Sauce Labs Bike Light']";
+	String onesie_title = "//div[text()='Sauce Labs Onesie']";
 }

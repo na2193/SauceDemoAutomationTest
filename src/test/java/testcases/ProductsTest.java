@@ -19,6 +19,22 @@ public class ProductsTest extends BaseTest{
 	  Thread.sleep(5000);
 	  logger.log(Status.INFO, "Validating title is Sauce Labs Backpack");
 	  productsPage.validateSauceLabsBackpackTitle();
+	  Thread.sleep(5000);
+	  logger.log(Status.INFO, "Validating title is Sauce Labs Bolt T-Shirt");
+	  productsPage.validateSauceLabsBoltTshirtTitle();
+	  Thread.sleep(5000);
+	  logger.log(Status.INFO, "Validating title is Sauce Labs Fleece Jacket");
+	  productsPage.validateSauceLabsFleeceJacketTitle();
+	  Thread.sleep(5000);
+	  logger.log(Status.INFO, "Validating title is Test.allTheThings() T-Shirt (Red)");
+	  productsPage.validateTestAllThingsTitle();
+	  Thread.sleep(5000);
+	  logger.log(Status.INFO, "Validating title is Sauce Labs Bike Light");
+	  productsPage.validateBikeLightTitle();
+	  Thread.sleep(5000);
+	  logger.log(Status.INFO, "Validating title is Sauce Labs Onesie");
+	  productsPage.validateOnesieTitle();
+	  
 	  
   }
 }
