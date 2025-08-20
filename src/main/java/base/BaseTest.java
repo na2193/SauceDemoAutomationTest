@@ -121,14 +121,16 @@ public class BaseTest {
 	private void setupDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			Map<String, Object> prefs = new HashMap<>();
-			prefs.put("credentials_enable_service", false);
-			prefs.put("profile.password_manager_enabled", false);
-			ChromeOptions options = new ChromeOptions();
-			options.setExperimentalOption("prefs", prefs);
-			options.addArguments("--disable-password-manager-reauthentication");
-			options.addArguments("--disable-features=PasswordLeakDetections,PasswordGeneration,PasswordManagerOnboarding");
-			WebDriverManager.chromedriver().setup();
-			driver.set(new ChromeDriver());
+		    prefs.put("credentials_enable_service", false);
+		    prefs.put("profile.password_manager_enabled", false);
+
+		    ChromeOptions options = new ChromeOptions();
+		    options.setExperimentalOption("prefs", prefs);
+		    options.addArguments("--disable-password-manager-reauthentication");
+		    options.addArguments("--disable-features=PasswordLeakDetection,PasswordGeneration,PasswordManagerOnboarding");
+
+		    WebDriverManager.chromedriver().setup();
+		    driver.set(new ChromeDriver(options));
 		}
 		else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
