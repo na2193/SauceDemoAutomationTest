@@ -17,7 +17,8 @@ public interface ProductPageElements {
 	String test_all_things_title = "//div[text()='Test.allTheThings() T-Shirt (Red)']";
 	String bike_light_title = "//div[text()='Sauce Labs Bike Light']";
 	String onesie_title = "//div[text()='Sauce Labs Onesie']";
-	String continue_shopping_button = "/html/body/div/div/div/div[2]/div/div[2]/button[1]";
+	//String continue_shopping_button = "/html/body/div/div/div/div[2]/div/div[2]/button[1]";
+	String continue_shopping_button = "continue-shopping";
 	String remove_saucelabs_onesie = "remove-sauce-labs-onesie";
 	String remove_saucelabs_bike = "remove-sauce-labs-bike-light";
 }

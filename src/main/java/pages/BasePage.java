@@ -2,6 +2,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
@@ -64,5 +65,13 @@ public abstract class BasePage {
 	// This function refreshes the page
 	public void refreshPage() {
 		driver.navigate().refresh();
+	}
+	
+	// This function scrolls to the element on the page
+	public void scrollToElement(WebElement element) {
+		// Scroll into view
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 }

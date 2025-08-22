@@ -120,13 +120,24 @@ public class ProductsPage extends BasePage {
 	}
 	
 	public void clickingOnContinueShopping() {
+		// because the button is all the way in the bottom of the page, you need to scroll, look at the function
+		scrollToElement(continueShoppingButton);
 		continueShoppingButton.click();
-		removeOnesie.click();
-		removeBikeLight.click();
+//		removeOnesie.click();
+//		removeBikeLight.click();
 	}
 	
 	public void verifyOnlyFourItemsInCart() {
+		// Step 1: Removed Onesie and BikeLight
+		removeOnesie.click();
+		removeBikeLight.click();
+				
+		// Step 2: Click on Cart Icon
 		
+		// Step 3: Verify 4 items are only in the cart
+		// Call the 4 function items above that are left in the cart
+		// example: Sauce Lab backpack is left in the cart
+		// so call the function: validateSauceLabsBackpackTitle()
 	}
 	
 }
