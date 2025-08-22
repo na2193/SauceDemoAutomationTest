@@ -51,6 +51,17 @@ public class ProductsPage extends BasePage {
 	@FindBy(xpath=ProductPageElements.onesie_title)
 	WebElement onesieTitle;
 
+	@FindBy(id=ProductPageElements.continue_shopping_button)
+	WebElement continueShoppingButton;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_onesie)
+	WebElement removeOnesie;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_bike)
+	WebElement removeBikeLight;
+	
+	
+	
 	public ProductsPage(WebDriver driver, CSVReader data, ExtentTest logger) {
 		super(driver, data, logger);
 	}
@@ -64,6 +75,7 @@ public class ProductsPage extends BasePage {
 		onesieButton.click();
 		testAllThingsButton.click();
 		cartIconButton.click();
+		
 	}
 
 	public void validateSauceLabsBackpackTitle() {
@@ -107,6 +119,14 @@ public class ProductsPage extends BasePage {
 
 	}
 	
+	public void clickingOnContinueShopping() {
+		continueShoppingButton.click();
+		removeOnesie.click();
+		removeBikeLight.click();
+	}
 	
-
+	public void verifyOnlyFourItemsInCart() {
+		
+	}
+	
 }
