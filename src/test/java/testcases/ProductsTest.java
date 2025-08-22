@@ -37,7 +37,8 @@ public class ProductsTest extends BaseTest{
 	  Thread.sleep(5000);
 	  logger.log(Status.INFO, "Clicking on Continue Shopping button");
 	  productsPage.clickingOnContinueShopping();
-	  Thread.sleep(5000);
+	  
+	  logger.log(Status.INFO, "Removing 2 items");
 	  
   }
 }
