@@ -17,8 +17,16 @@ public interface ProductPageElements {
 	String test_all_things_title = "//div[text()='Test.allTheThings() T-Shirt (Red)']";
 	String bike_light_title = "//div[text()='Sauce Labs Bike Light']";
 	String onesie_title = "//div[text()='Sauce Labs Onesie']";
-	//String continue_shopping_button = "/html/body/div/div/div/div[2]/div/div[2]/button[1]";
-	String continue_shopping_button = "continue-shopping";
+	String continue_shopping_button = "/html/body/div/div/div/div[2]/div/div[2]/button[1]";
 	String remove_saucelabs_onesie = "remove-sauce-labs-onesie";
 	String remove_saucelabs_bike = "remove-sauce-labs-bike-light";
+	String remove_saucelabs_backpack = "remove-sauce-labs-backpack";
+	String remove_saucelabs_bolt = "remove-sauce-labs-bolt-t-shirt";
+	String remove_saucelabs_fleece = "remove-sauce-labs-fleece-jacket";
+	String remove_saucelabs_testallthings = "remove-test.allthethings()-t-shirt-(red)";
+	String cart_badge = "/html/body/div/div/div/div[1]/div[1]/div[3]/a/span";
+	
+	// I was going to do "cart bad shows 1" all the way until 6 but when i copy 
+	// the xpath its all the same so is this fine even though the badge changes numbers
+	// after adding things to cart
 }

@@ -51,7 +51,7 @@ public class ProductsPage extends BasePage {
 	@FindBy(xpath=ProductPageElements.onesie_title)
 	WebElement onesieTitle;
 
-	@FindBy(id=ProductPageElements.continue_shopping_button)
+	@FindBy(xpath=ProductPageElements.continue_shopping_button)
 	WebElement continueShoppingButton;
 	
 	@FindBy(id=ProductPageElements.remove_saucelabs_onesie)
@@ -59,6 +59,22 @@ public class ProductsPage extends BasePage {
 	
 	@FindBy(id=ProductPageElements.remove_saucelabs_bike)
 	WebElement removeBikeLight;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_backpack)
+	WebElement removeBackpack;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_bolt)
+	WebElement removeBolt;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_fleece)
+	WebElement removeFleece;
+	
+	@FindBy(id=ProductPageElements.remove_saucelabs_testallthings)
+	WebElement removeTestAllThings;
+	
+	@FindBy(xpath=ProductPageElements.cart_badge)	
+	WebElement cartBadge;
+	
 	
 	
 	
@@ -123,8 +139,8 @@ public class ProductsPage extends BasePage {
 		// because the button is all the way in the bottom of the page, you need to scroll, look at the function
 		scrollToElement(continueShoppingButton);
 		continueShoppingButton.click();
-//		removeOnesie.click();
-//		removeBikeLight.click();
+		removeOnesie.click();
+		removeBikeLight.click();
 	}
 	
 	public void verifyOnlyFourItemsInCart() {
@@ -133,11 +149,56 @@ public class ProductsPage extends BasePage {
 		removeBikeLight.click();
 				
 		// Step 2: Click on Cart Icon
+		cartIconButton.click();
 		
 		// Step 3: Verify 4 items are only in the cart
 		// Call the 4 function items above that are left in the cart
 		// example: Sauce Lab backpack is left in the cart
-		// so call the function: validateSauceLabsBackpackTitle()
+		// so call the function: validateSauceLabsBackpackTitle()	
+		
+		validateSauceLabsBackpackTitle();
+		validateSauceLabsBoltTshirtTitle();
+	    validateSauceLabsFleeceJacketTitle();
+	    validateTestAllThingsTitle();
 	}
+	
+	
+	public void removeAllItemsInCart() {
+		removeBackpack.click();
+		removeBolt.click();
+		removeFleece.click();
+		removeTestAllThings.click();
+		scrollToElement(continueShoppingButton);
+		continueShoppingButton.click();
+	}
+	
+	public void verifyCartShowsOne() {
+		backPackButton.click();
+	}
+	
+	public void verifyCartShowsTwo() {
+		bikeLightButton.click();
+	}
+	
+	public void verifyCartShowsThree() {
+		boltShirtButton.click();
+	
+	}
+	
+	public void verifyCartShowsFour() {
+		fleeceJacketButton.click();
+	}
+	
+	public void verifyCartShowsFive() {
+		onesieButton.click();
+	}
+	
+	public void verifyCartShowsSix() {
+		testAllThingsButton.click();	
+	}
+		
+	// I don't know how to verify that the badge shows 1-6 after adding each time
+	
+	// when we did "validating the titles" am i supposed to do the same like actual text and expected text
 	
 }
