@@ -128,6 +128,8 @@ public class BaseTest {
 		    options.setExperimentalOption("prefs", prefs);
 		    options.addArguments("--disable-password-manager-reauthentication");
 		    options.addArguments("--disable-features=PasswordLeakDetection,PasswordGeneration,PasswordManagerOnboarding");
+		    options.addArguments("--disable-save-password-bubble");
+		    options.addArguments("--incognito");
 
 		    WebDriverManager.chromedriver().setup();
 		    driver.set(new ChromeDriver(options));

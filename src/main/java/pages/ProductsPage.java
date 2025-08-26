@@ -139,16 +139,18 @@ public class ProductsPage extends BasePage {
 		// because the button is all the way in the bottom of the page, you need to scroll, look at the function
 		scrollToElement(continueShoppingButton);
 		continueShoppingButton.click();
-		removeOnesie.click();
-		removeBikeLight.click();
+		//removeOnesie.click();// why is this here, it's already on line 149
+		//removeBikeLight.click(); // same for this, line 151 so it's double clicking
 	}
 	
+	// this works now because line 142 and 143 is commneded out
 	public void verifyOnlyFourItemsInCart() {
 		// Step 1: Removed Onesie and BikeLight
 		removeOnesie.click();
 		removeBikeLight.click();
 				
 		// Step 2: Click on Cart Icon
+		scrollToElement(cartIconButton);
 		cartIconButton.click();
 		
 		// Step 3: Verify 4 items are only in the cart
@@ -172,10 +174,19 @@ public class ProductsPage extends BasePage {
 		continueShoppingButton.click();
 	}
 	
-	public void verifyCartShowsOne() {
-		backPackButton.click();
+	// This function verifies how many items in cart by getting the text thats in the html
+	public void verifyNumberOfItemsInCart(String numberOfItems) {
+		String cartBadgeExpectedText = cartBadge.getText();
+		compareText(numberOfItems, cartBadgeExpectedText);
 	}
 	
+	public void verifyCartShowsOne() {
+		backPackButton.click();
+		// call this function and pass in how many numbers in string to verify
+		verifyNumberOfItemsInCart("1");
+	}
+	
+	// Do the same for all the button below
 	public void verifyCartShowsTwo() {
 		bikeLightButton.click();
 	}

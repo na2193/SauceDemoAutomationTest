@@ -24,7 +24,9 @@ public interface ProductPageElements {
 	String remove_saucelabs_bolt = "remove-sauce-labs-bolt-t-shirt";
 	String remove_saucelabs_fleece = "remove-sauce-labs-fleece-jacket";
 	String remove_saucelabs_testallthings = "remove-test.allthethings()-t-shirt-(red)";
-	String cart_badge = "/html/body/div/div/div/div[1]/div[1]/div[3]/a/span";
+	String cart_badge = "//a[@data-test='shopping-cart-link']/span"; // new expath
+	
+	
 	
 	// I was going to do "cart bad shows 1" all the way until 6 but when i copy 
 	// the xpath its all the same so is this fine even though the badge changes numbers

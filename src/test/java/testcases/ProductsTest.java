@@ -38,8 +38,9 @@ public class ProductsTest extends BaseTest{
 	  logger.log(Status.INFO, "Clicking on Continue Shopping button");
 	  productsPage.clickingOnContinueShopping();
 	  Thread.sleep(5000);
-	  logger.log(Status.INFO, "Removing 2 items");
+	  logger.log(Status.INFO, "Removing 2 items and verifying only 4 items are in the cart");
 	  productsPage.verifyOnlyFourItemsInCart();
+	  productsPage.verifyNumberOfItemsInCart("4");
 	  Thread.sleep(5000);
 	  logger.log(Status.INFO, "Removing all items from cart");
 	  productsPage.removeAllItemsInCart();
